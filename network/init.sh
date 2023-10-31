@@ -116,5 +116,5 @@ sed -i -e "s/\"mint_denom\": \"stake\",/\"mint_denom\": \"$STAKEDENOM\",/g" "$GE
 sed -i -e "s/\"bond_denom\": \"stake\"/\"bond_denom\": \"$STAKEDENOM\"/g" "$GENESIS_FILE"
 
 # Set voting period and unbonding time
-sed -i "s/"voting_period": "172800s"/"voting_period": "$DURATION"/" "$GENESIS_FILE"
-sed -i "s/"unbonding_time": "1814400s"/"unbonding_time": "$DURATION"/" "$GENESIS_FILE"
+sed -i "s/\"voting_period\": \"172800s\"/\"voting_period\": \"$DURATION\"/g" "$GENESIS_FILE"
+sed -i "s/\"unbonding_time\": \"1814400s\"/\"unbonding_time\": \"$DURATION\"/g" "$GENESIS_FILE"
