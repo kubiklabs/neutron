@@ -33,6 +33,10 @@ SUBDAO_PROPOSAL_CONTRACT=$CONTRACTS_BINARIES_DIR/cwd_subdao_proposal_single.wasm
 CW4_VOTING_CONTRACT=$THIRD_PARTY_CONTRACTS_DIR/cw4_voting.wasm
 CW4_GROUP_CONTRACT=$THIRD_PARTY_CONTRACTS_DIR/cw4_group.wasm
 
+
+sed -i "s/cors_allowed_origins = \[\]/cors_allowed_origins = \[\"\*\"\]/" "$CHAIN_DIR/config/config.toml"
+sed -i "s/enabled-unsafe-cors = false/enabled-unsafe-cors = true/" "$CHAIN_DIR/config/app.toml"
+
 echo "Add consumer section..."
 $BINARY add-consumer-section --home "$CHAIN_DIR"
 ### PARAMETERS SECTION
