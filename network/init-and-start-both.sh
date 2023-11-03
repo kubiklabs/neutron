@@ -31,16 +31,16 @@ export STAKEDENOM=uatom
 "$script_full_path"/init-gaiad.sh
 "$script_full_path"/start.sh
 
-export BINARY=gaiad
-export CHAINID=juno-test-3
-export P2PPORT=36656
-export RPCPORT=36657
-export RESTPORT=1315
-export ROSETTA=7080
-export GRPCPORT=7090
-export GRPCWEB=7091
-export STAKEDENOM=ujuno
+# export BINARY=gaiad
+# export CHAINID=juno-test-3
+# export P2PPORT=36656
+# export RPCPORT=36657
+# export RESTPORT=1315
+# export ROSETTA=7080
+# export GRPCPORT=7090
+# export GRPCWEB=7091
+# export STAKEDENOM=ujuno
 
-"$script_full_path"/init.sh
-"$script_full_path"/init-junod.sh
-"$script_full_path"/start.sh
+# "$script_full_path"/init.sh
+# "$script_full_path"/init-junod.sh
+# "$script_full_path"/start.sh
