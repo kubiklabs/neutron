@@ -10,10 +10,3 @@ $HERMES_BINARY --config $CONFIG_DIR create connection --a-chain neutron-test-1 -
 
 sleep 2
 $HERMES_BINARY --config $CONFIG_DIR create channel --a-chain neutron-test-1 --a-connection connection-0 --a-port transfer --b-port transfer
-
-
-echo "Initiating connection handshake neutron-juno..."
-$HERMES_BINARY --config $CONFIG_DIR create connection --a-chain neutron-test-1 --b-chain juno-test-3
-
-sleep 2
-$HERMES_BINARY --config $CONFIG_DIR create channel --a-chain neutron-test-1 --a-connection connection-1 --a-port transfer --b-port transfer

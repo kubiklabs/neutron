@@ -35,6 +35,7 @@ DEMO_MNEMONIC_14="relax major water toddler side dash danger cliff island denial
 DEMO_MNEMONIC_15="click help knock drastic tourist cancel mom winner sort keen poem cross book lady front coin steel chef color few just hockey cable diamond"
 RLY_MNEMONIC_1="alley afraid soup fall idea toss can goose become valve initial strong forward bright dish figure check leopard decide warfare hub unusual join cart"
 RLY_MNEMONIC_2="record gift you once hip style during joke field prize dust unique length more pencil transfer quit train device arrive energy sort steak upset"
+RLY_MNEMONIC_3="black frequent sponsor nice claim rally hunt suit parent size stumble expire forest avocado mistake agree trend witness lounge shiver image smoke stool chicken"
 
 # Stop if it is already running
 if pgrep -x "$BINARY" >/dev/null; then
@@ -74,6 +75,7 @@ echo "$DEMO_MNEMONIC_14" | $BINARY keys add demowallet14 --home "$CHAIN_DIR" --r
 echo "$DEMO_MNEMONIC_15" | $BINARY keys add demowallet15 --home "$CHAIN_DIR" --recover --keyring-backend=test
 echo "$RLY_MNEMONIC_1" | $BINARY keys add rly1 --home "$CHAIN_DIR" --recover --keyring-backend=test
 echo "$RLY_MNEMONIC_2" | $BINARY keys add rly2 --home "$CHAIN_DIR" --recover --keyring-backend=test
+echo "$RLY_MNEMONIC_3" | $BINARY keys add rly3 --home "$CHAIN_DIR" --recover --keyring-backend=test
 
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show val1 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show val2 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
@@ -94,6 +96,7 @@ $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show demowallet1
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show demowallet15 --keyring-backend test -a)" "100000000000000$STAKEDENOM,100000000000000$IBCATOMDENOM,100000000000000$IBCUSDCDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly1 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly2 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
+$BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly3 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 
 sed -i -e 's/timeout_commit = "5s"/timeout_commit = "1s"/g' "$CHAIN_DIR/config/config.toml"
 sed -i -e 's/timeout_propose = "3s"/timeout_propose = "1s"/g' "$CHAIN_DIR/config/config.toml"
