@@ -117,7 +117,7 @@ rpc_addr = 'http://127.0.0.1:36657'
 grpc_addr = 'http://127.0.0.1:7090'
 event_source = { mode = 'push', url = 'ws://127.0.0.1:36657/websocket', batch_delay = '200ms' }
 rpc_timeout = '10s'
-account_prefix = 'juno'
+account_prefix = 'cosmos'
 key_name = 'testkey_3'
 store_prefix = 'ibc'
 default_gas = 100000
