@@ -31,7 +31,7 @@ export STAKEDENOM=uatom
 "$script_full_path"/init-gaiad.sh
 "$script_full_path"/start.sh
 
-export BINARY=junod
+export BINARY=gaiad
 export CHAINID=juno-test-3
 export P2PPORT=36656
 export RPCPORT=36657
