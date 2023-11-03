@@ -9,7 +9,7 @@ echo "Initiating connection handshakegaia-neutron..."
 $HERMES_BINARY --config $CONFIG_DIR create connection --a-chain neutron-test-1 --b-chain gaia-test-2
 
 sleep 2
-$HERMES_BINARY --config $CONFIG_DIR create channel --a-chain test-1 --a-connection connection-0 --a-port transfer --b-port transfer
+$HERMES_BINARY --config $CONFIG_DIR create channel --a-chain neutron-test-1 --a-connection connection-0 --a-port transfer --b-port transfer
 
 
 echo "Initiating connection handshake neutron-juno..."
