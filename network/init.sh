@@ -3,7 +3,7 @@ set -e
 
 BINARY=${BINARY:-neutrond}
 BASE_DIR=./data
-CHAINID=${CHAINID:-test-1}
+CHAINID=${CHAINID:-neutron-test-1}
 STAKEDENOM=${STAKEDENOM:-untrn}
 IBCATOMDENOM=${IBCATOMDENOM:-uibcatom}
 IBCUSDCDENOM=${IBCUSDCDENOM:-uibcusdc}
