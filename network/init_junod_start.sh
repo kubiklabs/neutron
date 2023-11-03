@@ -55,6 +55,7 @@ fi
 echo "Initializing $CHAINID..."
 $BINARY init test --home "$CHAIN_DIR" --chain-id="$CHAINID"
 
+GENESIS_FILE="$CHAIN_DIR/config/genesis.json"
 sed -i "s/\"cosmos/\"juno/g" "$GENESIS_FILE"
 
 echo "Adding genesis accounts..."
@@ -114,7 +115,7 @@ sed -i -e 's#"tcp://127.0.0.1:26657"#"tcp://0.0.0.0:'"$RPCPORT"'"#g' "$CHAIN_DIR
 sed -i -e 's#"tcp://0.0.0.0:1317"#"tcp://0.0.0.0:'"$RESTPORT"'"#g' "$CHAIN_DIR/config/app.toml"
 sed -i -e 's#":8080"#":'"$ROSETTA_1"'"#g' "$CHAIN_DIR/config/app.toml"
 
-GENESIS_FILE="$CHAIN_DIR/config/genesis.json"
+
 
 sed -i -e "s/\"denom\": \"stake\",/\"denom\": \"$STAKEDENOM\",/g" "$GENESIS_FILE"
 sed -i -e "s/\"mint_denom\": \"stake\",/\"mint_denom\": \"$STAKEDENOM\",/g" "$GENESIS_FILE"
