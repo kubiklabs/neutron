@@ -6,7 +6,7 @@ BASE_DIR=./data
 CHAINID=${CHAINID:-juno-test-3}
 CHAIN_DIR="$BASE_DIR/$CHAINID"
 
-STAKEDENOM=${STAKEDENOM:-stake}
+STAKEDENOM=${STAKEDENOM:-ujuno}
 
 echo "Creating and collecting gentx..."
 $BINARY gentx val1 "7000000000$STAKEDENOM" --home "$CHAIN_DIR" --chain-id "$CHAINID" --keyring-backend test
