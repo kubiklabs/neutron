@@ -116,9 +116,7 @@ sed -i -e 's#"tcp://0.0.0.0:1317"#"tcp://0.0.0.0:'"$RESTPORT"'"#g' "$CHAIN_DIR/c
 sed -i -e 's#":8080"#":'"$ROSETTA_1"'"#g' "$CHAIN_DIR/config/app.toml"
 
 GENESIS_FILE="$CHAIN_DIR/config/genesis.json"
-sed -i "s/cosmos1/juno1/g" "$GENESIS_FILE"
-
-echo $GENESIS_FILE
+# sed -i "s/cosmos1/juno1/g" "$GENESIS_FILE"
 
 # $BINARY --home "$CHAIN_DIR" keys show val1 --keyring-backend test -a
 # $BINARY --home "$CHAIN_DIR" keys show val2 --keyring-backend test -a
