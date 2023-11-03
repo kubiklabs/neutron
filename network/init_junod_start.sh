@@ -115,7 +115,7 @@ sed -i -e 's#"tcp://0.0.0.0:1317"#"tcp://0.0.0.0:'"$RESTPORT"'"#g' "$CHAIN_DIR/c
 sed -i -e 's#":8080"#":'"$ROSETTA_1"'"#g' "$CHAIN_DIR/config/app.toml"
 
 GENESIS_FILE="$CHAIN_DIR/config/genesis.json"
-sed -i "s/\"cosmos/\"juno/g" "$GENESIS_FILE"
+sed -i "s/\"cosmos1/\"juno1/g" "$GENESIS_FILE"
 
 sed -i -e "s/\"denom\": \"stake\",/\"denom\": \"$STAKEDENOM\",/g" "$GENESIS_FILE"
 sed -i -e "s/\"mint_denom\": \"stake\",/\"mint_denom\": \"$STAKEDENOM\",/g" "$GENESIS_FILE"
