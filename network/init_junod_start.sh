@@ -116,28 +116,30 @@ sed -i -e 's#"tcp://0.0.0.0:1317"#"tcp://0.0.0.0:'"$RESTPORT"'"#g' "$CHAIN_DIR/c
 sed -i -e 's#":8080"#":'"$ROSETTA_1"'"#g' "$CHAIN_DIR/config/app.toml"
 
 GENESIS_FILE="$CHAIN_DIR/config/genesis.json"
-sed -i "s/\"cosmos1/\"juno1/g" "$GENESIS_FILE"
+sed -i "s/cosmos1/juno1/g" "$GENESIS_FILE"
 
-$BINARY --home "$CHAIN_DIR" keys show val1 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show val2 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet1 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet2 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet3 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet4 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet5 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet6 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet7 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet8 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet9 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet10 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet11 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet12 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet13 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet14 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show demowallet15 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show rly1 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show rly2 --keyring-backend test -a
-$BINARY --home "$CHAIN_DIR" keys show rly3 --keyring-backend test -a
+echo $GENESIS_FILE
+
+# $BINARY --home "$CHAIN_DIR" keys show val1 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show val2 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet1 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet2 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet3 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet4 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet5 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet6 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet7 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet8 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet9 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet10 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet11 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet12 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet13 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet14 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet15 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show rly1 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show rly2 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show rly3 --keyring-backend test -a
 
 
 sed -i -e "s/\"denom\": \"stake\",/\"denom\": \"$STAKEDENOM\",/g" "$GENESIS_FILE"
