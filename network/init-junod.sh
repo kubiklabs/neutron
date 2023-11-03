@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-BINARY=${BINARY:-gaiad}
+BINARY=${BINARY:-junod}
 BASE_DIR=./data
 CHAINID=${CHAINID:-juno-test-3}
 CHAIN_DIR="$BASE_DIR/$CHAINID"
