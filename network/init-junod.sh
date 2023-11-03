@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-BINARY=${BINARY:-gaiad}
+BINARY=${BINARY:-junod}
 BASE_DIR=./data
-CHAINID=${CHAINID:-test-1}
+CHAINID=${CHAINID:-juno-test-3}
 CHAIN_DIR="$BASE_DIR/$CHAINID"
 
 STAKEDENOM=${STAKEDENOM:-stake}

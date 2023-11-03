@@ -4,7 +4,7 @@ set -e
 script_full_path=$(dirname "$0")
 
 export BINARY=neutrond
-export CHAINID=test-1
+export CHAINID=neutron-test-1
 export P2PPORT=26656
 export RPCPORT=26657
 export RESTPORT=1317
@@ -18,7 +18,7 @@ export STAKEDENOM=untrn
 "$script_full_path"/start.sh
 
 export BINARY=gaiad
-export CHAINID=test-2
+export CHAINID=gaia-test-2
 export P2PPORT=16656
 export RPCPORT=16657
 export RESTPORT=1316
@@ -29,4 +29,18 @@ export STAKEDENOM=uatom
 
 "$script_full_path"/init.sh
 "$script_full_path"/init-gaiad.sh
+"$script_full_path"/start.sh
+
+export BINARY=junod
+export CHAINID=juno-test-3
+export P2PPORT=36656
+export RPCPORT=36657
+export RESTPORT=1315
+export ROSETTA=7080
+export GRPCPORT=7090
+export GRPCWEB=7091
+export STAKEDENOM=ujuno
+
+"$script_full_path"/init.sh
+"$script_full_path"/init-junod.sh
 "$script_full_path"/start.sh
