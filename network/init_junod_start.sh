@@ -139,7 +139,6 @@ $BINARY --home "$CHAIN_DIR" keys show rly1 --keyring-backend test -a
 $BINARY --home "$CHAIN_DIR" keys show rly2 --keyring-backend test -a
 $BINARY --home "$CHAIN_DIR" keys show rly3 --keyring-backend test -a
 
-echo
 
 sed -i -e "s/\"denom\": \"stake\",/\"denom\": \"$STAKEDENOM\",/g" "$GENESIS_FILE"
 sed -i -e "s/\"mint_denom\": \"stake\",/\"mint_denom\": \"$STAKEDENOM\",/g" "$GENESIS_FILE"
