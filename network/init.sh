@@ -32,10 +32,10 @@ DEMO_MNEMONIC_11="half sauce cupboard card audit fitness replace entire crack ex
 DEMO_MNEMONIC_12="region sure orchard robust asset maximum output genre stand hurt dilemma disease accuse truth cargo approve foster pear two great bonus life bracket brief"
 DEMO_MNEMONIC_13="miss win girl project sponsor want theme absorb olympic survey axis rate exercise blue reunion know affair velvet verify model crop ticket wave photo"
 DEMO_MNEMONIC_14="relax major water toddler side dash danger cliff island denial border aisle pepper poverty scheme camp journey idle act kind pill praise exchange solution"
-DEMO_MNEMONIC_15="click help knock drastic tourist cancel mom winner sort keen poem cross book lady front coin steel chef color few just hockey cable diamond"
 RLY_MNEMONIC_1="alley afraid soup fall idea toss can goose become valve initial strong forward bright dish figure check leopard decide warfare hub unusual join cart"
 RLY_MNEMONIC_2="record gift you once hip style during joke field prize dust unique length more pencil transfer quit train device arrive energy sort steak upset"
 RLY_MNEMONIC_3="black frequent sponsor nice claim rally hunt suit parent size stumble expire forest avocado mistake agree trend witness lounge shiver image smoke stool chicken"
+RLY_MNEMONIC_4="click help knock drastic tourist cancel mom winner sort keen poem cross book lady front coin steel chef color few just hockey cable diamond"
 
 # Stop if it is already running
 if pgrep -x "$BINARY" >/dev/null; then
