@@ -147,3 +147,10 @@ sed -i -e "s/\"bond_denom\": \"stake\"/\"bond_denom\": \"$STAKEDENOM\"/g" "$GENE
 # Set voting period and unbonding time
 sed -i "s/\"voting_period\": \"172800s\"/\"voting_period\": \"$DURATION\"/g" "$GENESIS_FILE"
 sed -i "s/\"unbonding_time\": \"1814400s\"/\"unbonding_time\": \"$DURATION\"/g" "$GENESIS_FILE"
+
+# inflation rate change 
+sed -i "s/\"inflation\": \"0.130000000000000000\"/\"inflation\": \"0.100000000000000000\"/g" "$GENESIS_FILE"
+sed -i "s/\"inflation_rate_change\": \"0.130000000000000000\"/\"inflation_rate_change\": \"0.100000000000000000\"/g" "$GENESIS_FILE"
+
+# "inflation": "0.130000000000000000"
+# "inflation_rate_change": "0.130000000000000000",
