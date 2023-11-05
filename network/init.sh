@@ -121,3 +121,8 @@ sed -i -e "s/\"bond_denom\": \"stake\"/\"bond_denom\": \"$STAKEDENOM\"/g" "$GENE
 # Set voting period and unbonding time
 sed -i "s/\"voting_period\": \"172800s\"/\"voting_period\": \"$DURATION\"/g" "$GENESIS_FILE"
 sed -i "s/\"unbonding_time\": \"1814400s\"/\"unbonding_time\": \"$DURATION\"/g" "$GENESIS_FILE"
+
+
+sed -i -e 's/\"allow_messages\":.*/\"allow_messages\": [\"\/cosmos.bank.v1beta1.MsgSend\", \"\/cosmos.staking.v1beta1.MsgDelegate\", \"\/cosmos.gov.v1beta1.MsgSubmitProposal\"]/g' "$CHAIN_DIR/config/genesis.json"
+sed -i "s/cors_allowed_origins = \[\]/cors_allowed_origins = \[\"\*\"\]/" "$CHAIN_DIR/config/config.toml"
+sed -i "s/enabled-unsafe-cors = false/enabled-unsafe-cors = true/" "$CHAIN_DIR/config/app.toml"
