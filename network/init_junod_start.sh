@@ -152,5 +152,9 @@ sed -i "s/\"unbonding_time\": \"1814400s\"/\"unbonding_time\": \"$DURATION\"/g" 
 sed -i "s/\"inflation\": \"0.130000000000000000\"/\"inflation\": \"0.100000000000000000\"/g" "$GENESIS_FILE"
 sed -i "s/\"inflation_rate_change\": \"0.130000000000000000\"/\"inflation_rate_change\": \"0.100000000000000000\"/g" "$GENESIS_FILE"
 
+
+sed -i "s/cors_allowed_origins = \[\]/cors_allowed_origins = \[\"\*\"\]/" "$CHAIN_DIR/config/config.toml"
+sed -i "s/enabled-unsafe-cors = false/enabled-unsafe-cors = true/" "$CHAIN_DIR/config/app.toml"
+
 # "inflation": "0.130000000000000000"
 # "inflation_rate_change": "0.130000000000000000",
