@@ -41,6 +41,20 @@ export GRPCPORT=7090
 export GRPCWEB=7091
 export STAKEDENOM=ujuno
 
-"$script_full_path"/init.sh
+"$script_full_path"/init_junod_start.sh
 "$script_full_path"/init-junod.sh
+"$script_full_path"/start.sh
+
+export BINARY=gaiad
+export CHAINID=osmo-test-4
+export P2PPORT=46656
+export RPCPORT=46657
+export RESTPORT=1314
+export ROSETTA=6080
+export GRPCPORT=6090
+export GRPCWEB=6091
+export STAKEDENOM=uosmo
+
+"$script_full_path"/init_osmod_start.sh
+"$script_full_path"/init-osmod.sh
 "$script_full_path"/start.sh

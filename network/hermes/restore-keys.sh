@@ -22,3 +22,7 @@ sleep 5
 $HERMES_BINARY --config ./network/hermes/config.toml keys delete --chain juno-test-3 --all
 $HERMES_BINARY --config ./network/hermes/config.toml keys add --key-name testkey_4 --chain juno-test-3 --mnemonic-file <(echo "click help knock drastic tourist cancel mom winner sort keen poem cross book lady front coin steel chef color few just hockey cable diamond")
 sleep 5
+
+$HERMES_BINARY --config ./network/hermes/config.toml keys delete --chain osmo-test-4 --all
+$HERMES_BINARY --config ./network/hermes/config.toml keys add --key-name testkey_5 --chain osmo-test-4 --mnemonic-file <(echo "relax major water toddler side dash danger cliff island denial border aisle pepper poverty scheme camp journey idle act kind pill praise exchange solution")
+sleep 5

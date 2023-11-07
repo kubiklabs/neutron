@@ -31,11 +31,11 @@ DEMO_MNEMONIC_10="symptom camera collect dismiss screen wagon club maid math sli
 DEMO_MNEMONIC_11="half sauce cupboard card audit fitness replace entire crack exile audit brave delay exhaust embark like afraid mountain critic custom glimpse load grunt ugly"
 DEMO_MNEMONIC_12="region sure orchard robust asset maximum output genre stand hurt dilemma disease accuse truth cargo approve foster pear two great bonus life bracket brief"
 DEMO_MNEMONIC_13="miss win girl project sponsor want theme absorb olympic survey axis rate exercise blue reunion know affair velvet verify model crop ticket wave photo"
-DEMO_MNEMONIC_14="relax major water toddler side dash danger cliff island denial border aisle pepper poverty scheme camp journey idle act kind pill praise exchange solution"
 RLY_MNEMONIC_1="alley afraid soup fall idea toss can goose become valve initial strong forward bright dish figure check leopard decide warfare hub unusual join cart"
 RLY_MNEMONIC_2="record gift you once hip style during joke field prize dust unique length more pencil transfer quit train device arrive energy sort steak upset"
 RLY_MNEMONIC_3="black frequent sponsor nice claim rally hunt suit parent size stumble expire forest avocado mistake agree trend witness lounge shiver image smoke stool chicken"
 RLY_MNEMONIC_4="click help knock drastic tourist cancel mom winner sort keen poem cross book lady front coin steel chef color few just hockey cable diamond"
+RLY_MNEMONIC_5="relax major water toddler side dash danger cliff island denial border aisle pepper poverty scheme camp journey idle act kind pill praise exchange solution"
 
 # Stop if it is already running
 if pgrep -x "$BINARY" >/dev/null; then
@@ -73,11 +73,11 @@ echo "$DEMO_MNEMONIC_10" | $BINARY keys add demowallet10 --home "$CHAIN_DIR" --r
 echo "$DEMO_MNEMONIC_11" | $BINARY keys add demowallet11 --home "$CHAIN_DIR" --recover --keyring-backend=test
 echo "$DEMO_MNEMONIC_12" | $BINARY keys add demowallet12 --home "$CHAIN_DIR" --recover --keyring-backend=test
 echo "$DEMO_MNEMONIC_13" | $BINARY keys add demowallet13 --home "$CHAIN_DIR" --recover --keyring-backend=test
-echo "$DEMO_MNEMONIC_14" | $BINARY keys add demowallet14 --home "$CHAIN_DIR" --recover --keyring-backend=test
 echo "$RLY_MNEMONIC_1" | $BINARY keys add rly1 --home "$CHAIN_DIR" --recover --keyring-backend=test
 echo "$RLY_MNEMONIC_2" | $BINARY keys add rly2 --home "$CHAIN_DIR" --recover --keyring-backend=test
 echo "$RLY_MNEMONIC_3" | $BINARY keys add rly3 --home "$CHAIN_DIR" --recover --keyring-backend=test
 echo "$RLY_MNEMONIC_4" | $BINARY keys add rly4 --home "$CHAIN_DIR" --recover --keyring-backend=test
+echo "$RLY_MNEMONIC_5" | $BINARY keys add rly5 --home "$CHAIN_DIR" --recover --keyring-backend=test
 
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show val1 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show val2 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
@@ -94,11 +94,11 @@ $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show demowallet1
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show demowallet11 --keyring-backend test -a)" "100000000000000$STAKEDENOM,100000000000000$IBCATOMDENOM,100000000000000$IBCUSDCDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show demowallet12 --keyring-backend test -a)" "100000000000000$STAKEDENOM,100000000000000$IBCATOMDENOM,100000000000000$IBCUSDCDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show demowallet13 --keyring-backend test -a)" "100000000000000$STAKEDENOM,100000000000000$IBCATOMDENOM,100000000000000$IBCUSDCDENOM"  --home "$CHAIN_DIR"
-$BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show demowallet14 --keyring-backend test -a)" "100000000000000$STAKEDENOM,100000000000000$IBCATOMDENOM,100000000000000$IBCUSDCDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly1 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly2 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly3 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly4 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
+$BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly5 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 
 
 sed -i -e 's/timeout_commit = "5s"/timeout_commit = "1s"/g' "$CHAIN_DIR/config/config.toml"
@@ -149,8 +149,8 @@ sed -i "s/\"voting_period\": \"172800s\"/\"voting_period\": \"$DURATION\"/g" "$G
 sed -i "s/\"unbonding_time\": \"1814400s\"/\"unbonding_time\": \"$DURATION\"/g" "$GENESIS_FILE"
 
 # inflation rate change 
-sed -i "s/\"inflation\": \"0.130000000000000000\"/\"inflation\": \"0.100000000000000000\"/g" "$GENESIS_FILE"
-sed -i "s/\"inflation_rate_change\": \"0.130000000000000000\"/\"inflation_rate_change\": \"0.100000000000000000\"/g" "$GENESIS_FILE"
+sed -i "s/\"inflation\": \"0.130000000000000000\"/\"inflation\": \"0.099400000000000000\"/g" "$GENESIS_FILE"
+sed -i "s/\"inflation_rate_change\": \"0.130000000000000000\"/\"inflation_rate_change\": \"0.099400000000000000\"/g" "$GENESIS_FILE"
 
 
 sed -i "s/cors_allowed_origins = \[\]/cors_allowed_origins = \[\"\*\"\]/" "$CHAIN_DIR/config/config.toml"

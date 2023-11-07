@@ -10,7 +10,6 @@ IBCUSDCDENOM=${IBCUSDCDENOM:-uibcusdc}
 CHAIN_DIR="$BASE_DIR/$CHAINID"
 # unbonding time and voting period,
 DURATION=3600s
-
 P2PPORT=${P2PPORT:-26656}
 RPCPORT=${RPCPORT:-26657}
 RESTPORT=${RESTPORT:-1317}
@@ -55,6 +54,8 @@ fi
 echo "Initializing $CHAINID..."
 $BINARY init test --home "$CHAIN_DIR" --chain-id="$CHAINID"
 
+
+
 echo "Adding genesis accounts..."
 echo "$VAL_MNEMONIC_1" | $BINARY keys add val1 --home "$CHAIN_DIR" --recover --keyring-backend=test
 echo "$VAL_MNEMONIC_2" | $BINARY keys add val2 --home "$CHAIN_DIR" --recover --keyring-backend=test
@@ -98,6 +99,7 @@ $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly3 --keyr
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly4 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 $BINARY add-genesis-account "$($BINARY --home "$CHAIN_DIR" keys show rly5 --keyring-backend test -a)" "100000000000000$STAKEDENOM"  --home "$CHAIN_DIR"
 
+
 sed -i -e 's/timeout_commit = "5s"/timeout_commit = "1s"/g' "$CHAIN_DIR/config/config.toml"
 sed -i -e 's/timeout_propose = "3s"/timeout_propose = "1s"/g' "$CHAIN_DIR/config/config.toml"
 sed -i -e 's/index_all_keys = false/index_all_keys = true/g' "$CHAIN_DIR/config/config.toml"
@@ -113,6 +115,29 @@ sed -i -e 's#"tcp://0.0.0.0:1317"#"tcp://0.0.0.0:'"$RESTPORT"'"#g' "$CHAIN_DIR/c
 sed -i -e 's#":8080"#":'"$ROSETTA_1"'"#g' "$CHAIN_DIR/config/app.toml"
 
 GENESIS_FILE="$CHAIN_DIR/config/genesis.json"
+# sed -i "s/cosmos1/juno1/g" "$GENESIS_FILE"
+
+# $BINARY --home "$CHAIN_DIR" keys show val1 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show val2 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet1 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet2 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet3 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet4 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet5 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet6 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet7 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet8 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet9 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet10 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet11 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet12 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet13 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet14 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show demowallet15 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show rly1 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show rly2 --keyring-backend test -a
+# $BINARY --home "$CHAIN_DIR" keys show rly3 --keyring-backend test -a
+
 
 sed -i -e "s/\"denom\": \"stake\",/\"denom\": \"$STAKEDENOM\",/g" "$GENESIS_FILE"
 sed -i -e "s/\"mint_denom\": \"stake\",/\"mint_denom\": \"$STAKEDENOM\",/g" "$GENESIS_FILE"
@@ -122,6 +147,13 @@ sed -i -e "s/\"bond_denom\": \"stake\"/\"bond_denom\": \"$STAKEDENOM\"/g" "$GENE
 sed -i "s/\"voting_period\": \"172800s\"/\"voting_period\": \"$DURATION\"/g" "$GENESIS_FILE"
 sed -i "s/\"unbonding_time\": \"1814400s\"/\"unbonding_time\": \"$DURATION\"/g" "$GENESIS_FILE"
 
+# inflation rate change 
+sed -i "s/\"inflation\": \"0.130000000000000000\"/\"inflation\": \"0.100500000000000000\"/g" "$GENESIS_FILE"
+sed -i "s/\"inflation_rate_change\": \"0.130000000000000000\"/\"inflation_rate_change\": \"0.100500000000000000\"/g" "$GENESIS_FILE"
+
 
 sed -i "s/cors_allowed_origins = \[\]/cors_allowed_origins = \[\"\*\"\]/" "$CHAIN_DIR/config/config.toml"
 sed -i "s/enabled-unsafe-cors = false/enabled-unsafe-cors = true/" "$CHAIN_DIR/config/app.toml"
+
+# "inflation": "0.130000000000000000"
+# "inflation_rate_change": "0.130000000000000000",
