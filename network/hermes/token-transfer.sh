@@ -26,7 +26,7 @@ sleep 2
 $HERMES_BINARY tx ft-transfer --denom ujuno --receiver neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2 --key-name testkey_4 --dst-chain neutron-test-1 --src-chain juno-test-3 --src-port transfer --src-channel channel-1 --amount 40000000000000
 sleep 2
 
-$HERMES_BINARY tx ft-transfer --denom uosmo --receiver neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2 --key-name testkey_5 --dst-chain neutron-test-1 --src-chain osmo-test-4 --src-port transfer --src-channel channel-2 --amount 50000000000000
+$HERMES_BINARY tx ft-transfer --denom uosmo --receiver neutron1m9l358xunhhwds0568za49mzhvuxx9ux8xafx2 --key-name testkey_5 --dst-chain neutron-test-1 --src-chain osmosis-test-4 --src-port transfer --src-channel channel-2 --amount 50000000000000
 sleep 2
 
 #  hermes tx ft-transfer [OPTIONS] --dst-chain <DST_CHAIN_ID> --src-chain <SRC_CHAIN_ID> --src-port <SRC_PORT_ID> --src-channel <SRC_CHANNEL_ID> --amount <AMOUNT>

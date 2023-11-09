@@ -46,7 +46,7 @@ export STAKEDENOM=ujuno
 "$script_full_path"/start.sh
 
 export BINARY=gaiad
-export CHAINID=osmo-test-4
+export CHAINID=osmosis-test-4
 export P2PPORT=46656
 export RPCPORT=46657
 export RESTPORT=1314

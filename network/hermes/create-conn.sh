@@ -15,7 +15,7 @@ $HERMES_BINARY --config $CONFIG_DIR create connection --a-chain neutron-test-1 -
 sleep 2
 
 echo "Creating connection between neutron and osmo..."
-$HERMES_BINARY --config $CONFIG_DIR create connection --a-chain neutron-test-1 --b-chain osmo-test-4
+$HERMES_BINARY --config $CONFIG_DIR create connection --a-chain neutron-test-1 --b-chain osmosis-test-4
 sleep 2
 
 echo "Creating channel between neutron and gaia(connection-0)..."
@@ -27,5 +27,5 @@ $HERMES_BINARY --config $CONFIG_DIR create channel --a-chain neutron-test-1 --b-
 sleep 2
 
 echo "Creating channel between neutron and gaia(connection-4)..."
-$HERMES_BINARY --config $CONFIG_DIR create channel --a-chain neutron-test-1 --b-chain osmo-test-4 --a-port transfer --b-port transfer --new-client-connection
+$HERMES_BINARY --config $CONFIG_DIR create channel --a-chain neutron-test-1 --b-chain osmosis-test-4 --a-port transfer --b-port transfer --new-client-connection
 sleep 2

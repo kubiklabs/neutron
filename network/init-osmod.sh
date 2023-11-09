@@ -3,7 +3,7 @@ set -e
 
 BINARY=${BINARY:-gaiad}
 BASE_DIR=./data
-CHAINID=${CHAINID:-osmo-test-4}
+CHAINID=${CHAINID:-osmosis-test-4}
 CHAIN_DIR="$BASE_DIR/$CHAINID"
 
 STAKEDENOM=${STAKEDENOM:-uosmo}
